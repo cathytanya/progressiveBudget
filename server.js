@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-// Malware
+// Middleware
 app.use(logger("dev"));
 app.use(compression());
 app.use(express.urlencoded({ extended: true }));
