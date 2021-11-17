@@ -11,5 +11,16 @@ const FILES_TO_CACHE = [
     "/assets/images/icons/icon-512x512.png"
   ];
 
-  const STATIC_CACHE = "static-cache-v1";
+// making varibales for the static cache and runtime cache
+const STATIC_CACHE = "static-cache-v1";
 const RUNTIME_CACHE = "runtime-cache";
+
+// eventlister install cache
+self.addEventListener("install", event => {
+  event.waitUntil(
+    caches
+      .open(STATIC_CACHE)
+      .then(cache => cache.addAll(FILES_TO_CACHE))
+      .then(() => self.skipWaiting())
+  );
+});
