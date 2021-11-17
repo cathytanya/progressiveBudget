@@ -1,3 +1,6 @@
+// console logging letting user know the service-work is working
+console.log("Hi, I'm your service-worker.js and I'm working.")
+// cache files
 const FILES_TO_CACHE = [
     "/",
     "/index.html",
